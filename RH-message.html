@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIG - Espace de Formation</title>
+    <link rel="stylesheet" href="../assets/styles/RH-demande-compte.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="upbar">
+        <img src="../assets/images/menuicon.svg" onclick="toggleSidebar()" class="menuicon">
+        <div class="search-wrapper">
+            <input class="input-container" type="text" placeholder="Rechercher" id="search-bar">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+        <a href="RH-profile.html">
+            <img src="../assets/images/profil-pic.png" class="profileimg">
+        </a>
+    </header>
+           
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <div>
+            <button class="close-btn" onclick="toggleSidebar()">✖</button>
+            <ul>
+                <li><a href="RH-dashboard.html"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="RH-profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="#" class="active"><i class="fas fa-users"></i> demandes de comptes</a></li>    
+                <li><a href="RH-demande-formation.html"><i class="fas fa-book"></i> demandes de Formation</a></li>    
+                <li><a href="RH-calendar.html"><i class="fas fa-calendar"></i> Calendrier</a></li>    
+                <li><a href="RH-message.html"><i class="fas fa-envelope"></i> Messages</a></li>
+                <li><a href="Nottif-RH.html"><i class="fas fa-bell"></i> Notifications</a></li>
+                <li><a href="RH-aide.html"><i class="fas fa-question-circle"></i> Aide</a></li>
+            </ul>
+        </div>
+  
+        <div class="sidebar-footer">
+            <a href="RH-settings.html"><i class="fas fa-cog"></i> Paramètres</a>
+            <a href="../index.html" class="logout"><i class="fas fa-sign-out-alt"></i> Se déconnecter</a>
+        </div>
+    </div>      
+   
+    <main>
+        <!-- Intro Text -->
+        <br>
+        <br>
+        <p>Ici, vous trouverez les demandes de création de comptes pour les utilisateurs de la plateforme.
+        Acceptez si vous souhaitez créer le compte, sinon supprimez-le.</p>
+        <p>Assurez-vous que la personne existe bien dans le département avant de prendre une décision.</p>
+        <br>
+      
+        <section class="requests">
+            <h2>Les demandes</h2>
+            <table id="tableId">
+                <thead class="table-head">
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Department</th>
+                        <th>Function</th>
+                        <th>Valider</th>
+                        <th>Supprimer</th>
+                    </tr>
+                </thead>
+                <tbody id="requests-body">
+                    <!-- Les demandes seront chargées dynamiquement -->
+                </tbody>
+            </table>
+        </section>
+        <br>
+        <p>Vous trouverez ici la liste des comptes déjà créés.
+        Vous avez la possibilité de les modifier ou de les supprimer selon vos besoins</p>
+        <br>
+        <section class="accounts">
+            <h2>La liste des comptes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Department</th>
+                        <th>Function</th>
+                        <th>Modifier</th>
+                        <th>Supprimer</th>
+                    </tr>
+                </thead>
+                <tbody id="accounts-body">
+                    <!-- Les comptes seront chargés dynamiquement -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <p class="textS">Voulez-vous vraiment valider cette demande et créer le compte ?</p>
+            <div class="modal-buttons">
+                <button id="confirmBtn">Oui</button>
+                <button id="cancelBtn">Non</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="confirmEditPopup">
+        <div class="popup-box">
+            <h3>Confirmer la modification</h3>
+            <p>Êtes-vous sûr de vouloir modifier ces informations ?</p>
+            <button id="confirmEditBtn">Oui</button>
+            <button onclick="closeEditConfirmPopup()" id="dontmodifybotton">Annuler</button>
+        </div>
+    </div>
+
+    <div id="confirmDeletePopup" class="popup">
+        <div class="popup-content">
+            <p class="text-delet">Êtes-vous sûr de vouloir supprimer cette ligne ?</p>
+            <div class="popup-buttons">
+                <button id="confirmDeleteBtn">Oui</button>
+                <button onclick="closeDeleteConfirmPopup()">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/admin-management.js"></script>
+</body>
+</html> 

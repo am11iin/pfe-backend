@@ -1,0 +1,110 @@
+/* Styles pour le conteneur principal */
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Styles pour les cartes d'utilisateurs */
+.user-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-info {
+    flex: 1;
+}
+
+.user-info h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.user-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+/* Styles pour les boutons d'action */
+.user-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.approve-btn, .reject-btn, .delete-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.approve-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+.approve-btn:hover {
+    background-color: #45a049;
+}
+
+.reject-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.reject-btn:hover {
+    background-color: #da190b;
+}
+
+.delete-btn {
+    background-color: #ff9800;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #f57c00;
+}
+
+/* Styles pour les messages */
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 1px solid #ef9a9a;
+    font-size: 14px;
+    text-align: center;
+}
+
+.success-message {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 1px solid #a5d6a7;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .user-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .user-actions {
+        margin-top: 15px;
+        justify-content: center;
+    }
+} 
